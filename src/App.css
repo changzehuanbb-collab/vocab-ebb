@@ -1,0 +1,247 @@
+/* ========= 全局字体 & 背景 ========= */
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif;
+  color: #222;
+  background-color: #f3f5fb;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top left, #dde7ff, #f3f5fb 40%, #fdfdfd);
+}
+
+/* ========= 外层容器 ========= */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+
+/* ========= 顶部模式切换按钮 ========= */
+
+.mode-switch {
+  display: inline-flex;
+  padding: 4px;
+  background: #e3e7f5;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 18px rgba(33, 65, 148, 0.12);
+}
+
+.btn-mode {
+  border: none;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #4b4f66;
+  transition: all 0.2s ease;
+}
+
+.btn-mode.active {
+  background: #ffffff;
+  color: #1f3a93;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(21, 44, 110, 0.12);
+}
+
+/* ========= 标题和进度文字 ========= */
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  color: #1f2937;
+}
+
+h2 {
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 4px 0;
+}
+
+.app-container > p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ========= 每日任务进度条 ========= */
+
+.progress-container {
+  margin: 8px 0 18px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #60a5fa, #34d399);
+  width: 0%;
+  transition: width 0.25s ease;
+}
+
+.progress-text {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ========= 单词卡片 ========= */
+
+.card {
+  margin-top: 16px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 20px 16px;
+  max-width: 640px;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+  box-sizing: border-box;
+}
+
+/* 单词行：英文 + 音标 + 发音按钮 */
+.word-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.word-text {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.phonetic {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.pos {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* 发音按钮 */
+.btn-speak {
+  margin-left: auto;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.btn-speak:hover {
+  background: #eef2ff;
+  border-color: #a5b4fc;
+}
+
+/* ========= 通用按钮 ========= */
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 8px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 显示中文意思 */
+.btn.secondary {
+  margin-top: 10px;
+  background: #eef2ff;
+  color: #1d4ed8;
+  border-radius: 999px;
+  border: 1px solid #c7d2fe;
+}
+
+.btn.secondary:hover {
+  background: #e0e7ff;
+}
+
+/* 我忘了 / 我记得 */
+.btn-forgot {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-forgot:hover {
+  background: #fecaca;
+}
+
+.btn-remember {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.btn-remember:hover {
+  background: #bbf7d0;
+}
+
+/* 中文释义 */
+.meaning {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #111827;
+}
+
+/* ========= QuizCard（选择题卡片）小字号优化 ========= */
+
+.quiz-card button {
+  font-size: 14px;
+}
+
+/* ========= 移动端适配 ========= */
+
+@media (max-width: 600px) {
+  .card {
+    padding: 16px 14px 12px;
+  }
+
+  .word-text {
+    font-size: 20px;
+  }
+
+  .btn-mode {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}
